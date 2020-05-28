@@ -5,6 +5,7 @@
     <script src="/js/d3.v5.min.js"></script>
     <script src="/js/index.min.js"></script>
     <script src="/js/d3-graphviz.js"></script>
+    <script src="/js/LinkedList.js"></script>
 
     <meta name="generator" content="Hugo 0.69.2" />
     <meta charset="UTF-8">
@@ -18,9 +19,7 @@
     <link rel="canonical" href="/" />
 
     <title>
-
         AlgoViz :: t4ccer
-
     </title>
 
     <link href="/css/flag-icon.min.css" rel="stylesheet" type="text/css">
@@ -34,7 +33,6 @@
 
     <meta name="twitter:title" content="t4ccer" />
     <meta name="twitter:description" content="AlgoViz - algorithm visualizer" />
-
 
     <meta property="og:title" content="t4ccer" />
     <meta property="og:description" content="AlgoViz - algorithm visualizer" />
@@ -55,29 +53,23 @@
             <main aria-role="main">
                 <div>
                     <div class="my-menu" id="my-menu">
-                        <div class="my-menu-item text-left">
-                            <a href="/LinkedList/">Linked List</a>
-                        </div>
-                        <div class="my-menu-item-disabled text-left">
-                            <a>Binary search</a>
-                        </div>
-                        <div class="my-menu-item-disabled text-left">
-                            <a>Binary Tree</a>
-                        </div>
-                        <div class="my-menu-item-disabled text-left">
-                            <a>Array</a>
-                        </div>
-                        <div class="my-menu-item-disabled text-left">
-                            <a>Dynamic programming</a>
-                        </div>
                     </div>
                     <div class="my-menu">
-
+                        <div class="my-menu-item text-left">
+                            <p>List:</p>
+                            <input type="text" id="list" value="1,2,3,4,5,6,7,8,9">
+                        </div>
+                        <div class="my-menu-item" onclick="reset()">
+                            <a>Reset</a>
+                        </div>
                     </div>
                     <div class="my-right-container">
                         <div class="my-graph-container">
+                            <div id="graph" style="text-align: center;"></div>
                         </div>
                         <div class="my-description-container text-left">
+                            Three pointers are initialized: p at head of the list. pPrev to null, and pNext to p.Next.<br><br>Each iteration pNext is updated to p.next, p.next is set to pPrev, pPrev is set to p, andp is set to pNext. Loop ends when p
+                            == null.
                         </div>
                     </div>
                 </div>
@@ -91,7 +83,9 @@
                 </div>
         </footer>
         </div>
-        <script type="text/javascript" src="/js/bundle.min.js"></script>
+        <script src="/js/linked-list-menu-renderer.js"></script>
+        <script src="/js/bundle.min.js"></script>
+        <script src="/js/LinkedListReverse.js"></script>
 </body>
 
 </html>

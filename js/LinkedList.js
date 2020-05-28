@@ -16,6 +16,10 @@ function ToLinkedList(arr, tail = null) {
     return start.next;
 }
 
+function drawPointer(pointer, color) {
+    str += `${pointer.v}[fillcolor="${color}"]`;
+}
+
 function ResetGraph() {
     var bg = "#ffffff";
     var ec = "black";
@@ -36,7 +40,12 @@ function ResetGraph() {
 function DrawList(head) {
     var r1 = head;
 
-    while (r1.next != null) {
+    while (r1 != null) {
+        str += r1.v + ";\n";
+        r1 = r1.next;
+    }
+    r1 = head;
+    while (r1 != null && r1.next != null) {
         str += r1.v + "->" + r1.next.v + ";\n";
         r1 = r1.next;
     }
